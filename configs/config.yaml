@@ -1,0 +1,52 @@
+app:
+  name: "tisminSRETool"
+  version: "1.0.0"
+  refresh_interval: "10s"
+  log_level: "info"
+  log_path: "./app.log"
+  port: 8080
+
+diagnostic:
+  enabled: false
+  show_top_n_list: 10
+
+alert:
+  enabled: false
+  cpu_threshold: 80.0
+  memory_threshold: 80.0
+  disk_threshold: 85.0
+  disk_await_threshold: 50.0
+  disk_util_threshold: 80.0
+  inodes_threshold: 80.0
+  network_bandwidth_threshold: 80.0
+  network_packet_loss_threshold: 1.0
+  network_rtt_threshold: 100.0
+  tcp_time_wait_threshold: 1000
+  tcp_close_wait_threshold: 100
+  total_tcp_threshold: 10000
+
+email:
+  host: "smtp.example.com"
+  port: 587
+  username: ""
+  password: ""
+  from: ""
+  to: []
+
+influxdb:
+  enabled: false
+  url: "http://localhost:8086"
+  token: ""
+  org: "tismin"
+  bucket: "tisminSRETool"
+
+webhook:
+  enabled: false
+  url: ""
+  method: "POST"
+  timeout: 10
+
+dingtalk:
+  enabled: false
+  webhook_url: ""
+  secret: ""
