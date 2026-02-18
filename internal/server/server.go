@@ -11,7 +11,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 // Server HTTP 服务器

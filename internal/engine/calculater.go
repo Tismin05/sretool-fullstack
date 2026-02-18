@@ -2,7 +2,7 @@ package engine
 
 import (
 	"time"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 func CalculateRate(prev, cur model.Metrics, interval time.Duration) model.Metrics {

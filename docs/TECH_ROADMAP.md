@@ -1,10 +1,10 @@
-# tisminSRETool 扩展技术路线图
+# sretool-fullstack 扩展技术路线图
 
 ## 一、阶段划分总览
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                           tisminSRETool 扩展路线图                          │
+│                           sretool-fullstack 扩展路线图                          │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │   阶段 1              阶段 2              阶段 3              阶段 4       │
@@ -63,7 +63,7 @@
 
 | 文件 | 改动内容 |
 |------|---------|
-| `cmd/tisminSRETool/main.go` | 启动 HTTP 服务 + 定时采集循环 |
+| `cmd/sretool-fullstack/main.go` | 启动 HTTP 服务 + 定时采集循环 |
 | `internal/config/loader.go` | 新增，使用 Viper 加载配置 |
 | `internal/server/http.go` | 新增，Gin HTTP 服务 |
 | `internal/engine/runner.go` | 新增，定时调度逻辑 |
@@ -155,7 +155,7 @@ Fields:
   - used: uint64
 
 示例查询：
-from(bucket: "tisminSRETool")
+from(bucket: "sretool-fullstack")
   |> range(start: -1h)
   |> filter(fn: (r) => r._measurement == "system_metrics")
   |> filter(fn: (r) => r._field == "cpu_usage_percent")
@@ -292,7 +292,7 @@ web/
 │                         Dashboard 页面布局                           │
 ├─────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │  Header: tisminSRETool          [刷新] [时间范围] [设置]   │   │
+│  │  Header: sretool-fullstack          [刷新] [时间范围] [设置]   │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
 │  ┌──────────────────┐  ┌──────────────────┐  ┌────────────────┐   │

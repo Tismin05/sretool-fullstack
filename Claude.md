@@ -1,14 +1,14 @@
-# Claude Code 项目指南 - tisminSRETool
+# Claude Code 项目指南 - sretool-fullstack
 
 ## 项目概述
 
-tisminSRETool 是一个用 Go 编写的 SRE (Site Reliability Engineering) 监控工具，用于采集系统指标（CPU、内存、磁盘、网络）、执行系统诊断和发送告警通知。
+sretool-fullstack 是一个用 Go 编写的 SRE (Site Reliability Engineering) 监控工具，用于采集系统指标（CPU、内存、磁盘、网络）、执行系统诊断和发送告警通知。
 
 ## 项目结构
 
 ```
-tisminSRETool/
-├── cmd/tisminSRETool/          # 程序入口
+sretool-fullstack/
+├── cmd/sretool-fullstack/          # 程序入口
 │   ├── main.go                 # 主程序入口（当前为空）
 │   └── debug.go                # 调试/测试入口
 ├── configs/
@@ -142,7 +142,7 @@ func CalculateRate(prev, cur model.Metrics, interval time.Duration) model.Metric
 
 | 文件路径 | 作用 |
 |---------|------|
-| `cmd/tisminSRETool/debug.go` | 调试入口，包含完整的采集测试代码 |
+| `cmd/sretool-fullstack/debug.go` | 调试入口，包含完整的采集测试代码 |
 | `internal/collector/interface.go` | Collector 接口定义 |
 | `internal/collector/local_MacOS.go` | macOS 采集实现（主要参考） |
 | `internal/model/metrics.go` | 指标数据结构定义 |

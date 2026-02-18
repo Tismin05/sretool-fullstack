@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"time"
 
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 // WebhookSender Webhook 告警发送器
@@ -39,7 +39,7 @@ func (s *WebhookSender) Send(ctx context.Context, alerts []Alert, cfg model.Emai
 	payload := map[string]interface{}{
 		"alerts": alerts,
 		"timestamp": time.Now().Format(time.RFC3339),
-		"source":    "tisminSRETool",
+		"source":    "sretool-fullstack",
 	}
 
 	body, err := json.Marshal(payload)
@@ -96,7 +96,7 @@ func (s *DingTalkSender) Send(ctx context.Context, alerts []Alert, cfg model.Ema
 	}
 
 	// 简单文本消息格式
-	text := "## tisminSRETool 告警\n\n"
+	text := "## sretool-fullstack 告警\n\n"
 	for _, alert := range alerts {
 		text += fmt.Sprintf("**%s** %s: %s\n", alert.Level, alert.Category, alert.Message)
 	}

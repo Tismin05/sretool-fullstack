@@ -7,7 +7,7 @@ import (
 
 	"github.com/influxdata/influxdb-client-go/v2"
 	"github.com/influxdata/influxdb-client-go/v2/api"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 // InfluxStorage InfluxDB 存储

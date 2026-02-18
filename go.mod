@@ -1,4 +1,4 @@
-module tisminSRETool
+module sretool-fullstack
 
 go 1.25.6
 

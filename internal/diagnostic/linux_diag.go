@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"tisminSRETool/internal/collector"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/collector"
+	"sretool-fullstack/internal/model"
 )
 
 // LinuxDiagnostic Linux 系统诊断实现

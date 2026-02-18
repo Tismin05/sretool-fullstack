@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"tisminSRETool/internal/config"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/config"
+	"sretool-fullstack/internal/model"
 )
 
 // startTime 服务器启动时间

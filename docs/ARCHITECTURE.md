@@ -1,8 +1,8 @@
-# tisminSRETool 架构重构文档
+# sretool-fullstack 架构重构文档
 
 ## 一、项目概述
 
-tisminSRETool 是一个面向 Linux 服务器的 SRE 监控工具，专注于系统指标采集、告警通知和可观测性分析。项目采用模块化设计，支持灵活的扩展和长期维护。
+sretool-fullstack 是一个面向 Linux 服务器的 SRE 监控工具，专注于系统指标采集、告警通知和可观测性分析。项目采用模块化设计，支持灵活的扩展和长期维护。
 
 ## 二、技术栈（阶段1）
 
@@ -17,11 +17,11 @@ tisminSRETool 是一个面向 Linux 服务器的 SRE 监控工具，专注于系
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│                              tisminSRETool 架构图                               │
+│                              sretool-fullstack 架构图                               │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                 │
 │  ┌─────────────────────────────────────────────────────────────────────────┐   │
-│  │                            cmd/tisminSRETool                            │   │
+│  │                            cmd/sretool-fullstack                            │   │
 │  │                              main.go                                    │   │
 │  └─────────────────────────────────────────────────────────────────────────┘   │
 │                                        │                                       │
@@ -193,9 +193,9 @@ tisminSRETool 是一个面向 Linux 服务器的 SRE 监控工具，专注于系
 ## 五、目录结构
 
 ```
-tisminSRETool/
+sretool-fullstack/
 ├── cmd/
-│   └── tisminSRETool/
+│   └── sretool-fullstack/
 │       ├── main.go              # 程序入口
 │       └── debug.go             # 调试入口
 │
@@ -377,13 +377,13 @@ func (s *InfluxStorage) Write(ctx context.Context, metrics model.Metrics) error 
 
 ```bash
 # 构建
-go build -o tisminSRETool ./cmd/tisminSRETool
+go build -o sretool-fullstack ./cmd/sretool-fullstack
 
 # 运行
-./tisminSRETool -c ./configs/config.yaml
+./sretool-fullstack -c ./configs/config.yaml
 
 # 开发模式
-go run ./cmd/tisminSRETool -c ./configs/config.yaml
+go run ./cmd/sretool-fullstack -c ./configs/config.yaml
 ```
 
 ---

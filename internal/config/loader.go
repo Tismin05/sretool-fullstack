@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/spf13/viper"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 // Load 加载配置文件
@@ -41,7 +41,7 @@ func Load(configPath string) (*model.Config, error) {
 // setDefaults 设置配置默认值
 func setDefaults(v *viper.Viper) {
 	// 应用配置
-	v.SetDefault("app.name", "tisminSRETool")
+	v.SetDefault("app.name", "sretool-fullstack")
 	v.SetDefault("app.version", "1.0.0")
 	v.SetDefault("app.refresh_interval", 10*time.Second)
 	v.SetDefault("app.log_level", "info")
@@ -71,7 +71,7 @@ func setDefaults(v *viper.Viper) {
 	v.SetDefault("influxdb.url", "http://localhost:8086")
 	v.SetDefault("influxdb.token", "")
 	v.SetDefault("influxdb.org", "tismin")
-	v.SetDefault("influxdb.bucket", "tisminSRETool")
+	v.SetDefault("influxdb.bucket", "sretool-fullstack")
 }
 
 // bindEnvVars 绑定环境变量

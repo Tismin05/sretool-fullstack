@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 // EmailSender 邮件发送器
@@ -57,7 +57,7 @@ func (s *EmailSender) Send(ctx context.Context, alerts []Alert, cfg model.EmailC
 		return nil
 	}
 
-	subject := fmt.Sprintf("[%s] tisminSRETool Alert - %d alerts", alerts[0].Level, len(alerts))
+	subject := fmt.Sprintf("[%s] sretool-fullstack Alert - %d alerts", alerts[0].Level, len(alerts))
 	body := formatAlerts(alerts)
 
 	return s.SendEmail(subject, body, cfg)
@@ -66,7 +66,7 @@ func (s *EmailSender) Send(ctx context.Context, alerts []Alert, cfg model.EmailC
 // formatAlerts 格式化告警列表为邮件内容
 func formatAlerts(alerts []Alert) string {
 	var sb strings.Builder
-	sb.WriteString("tisminSRETool Alert Report\n")
+	sb.WriteString("sretool-fullstack Alert Report\n")
 	sb.WriteString(strings.Repeat("=", 50))
 	sb.WriteString("\n\n")
 

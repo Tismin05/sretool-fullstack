@@ -9,7 +9,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 var (

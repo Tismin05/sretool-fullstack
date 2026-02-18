@@ -5,7 +5,7 @@
       <div class="header-left">
         <div class="logo">
           <el-icon :size="32" color="#00d9ff"><Monitor /></el-icon>
-          <span class="logo-text gradient-text">tisminSRETool</span>
+          <span class="logo-text gradient-text">sretool-fullstack</span>
         </div>
         <div class="host-info">
           <el-tag :type="statusType" effect="dark" size="small">

@@ -1,5 +1,5 @@
 app:
-  name: "tisminSRETool"
+  name: "sretool-fullstack"
   version: "1.0.0"
   refresh_interval: "10s"
   log_level: "info"
@@ -38,7 +38,7 @@ influxdb:
   url: "http://localhost:8086"
   token: ""
   org: "tismin"
-  bucket: "tisminSRETool"
+  bucket: "sretool-fullstack"
 
 webhook:
   enabled: false

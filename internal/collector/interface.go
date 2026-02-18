@@ -2,7 +2,7 @@ package collector
 
 import (
 	"context"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 // Collector 采集器接口

@@ -1,4 +1,4 @@
-# tisminSRETool
+# sretool-fullstack
 
 A production-ready Go-based SRE monitoring tool for Linux servers. Collects system metrics (CPU, Memory, Disk, Network), performs system diagnostics, and sends alert notifications via multiple channels.
 
@@ -19,11 +19,11 @@ A production-ready Go-based SRE monitoring tool for Linux servers. Collects syst
 
 ```bash
 # Clone the project
-git clone https://github.com/your-repo/tisminSRETool.git
-cd tisminSRETool
+git clone https://github.com/your-repo/sretool-fullstack.git
+cd sretool-fullstack
 
 # Build the application
-go build -o tisminSRETool ./cmd/tisminSRETool
+go build -o sretool-fullstack ./cmd/sretool-fullstack
 ```
 
 ### 2. Configure
@@ -32,7 +32,7 @@ Edit `configs/config.yaml`:
 
 ```yaml
 app:
-  name: "tisminSRETool"
+  name: "sretool-fullstack"
   version: "1.0.0"
   refresh_interval: "10s"
   log_level: "info"
@@ -61,17 +61,17 @@ influxdb:
   url: "http://localhost:8086"
   token: "your-influxdb-token"
   org: "tismin"
-  bucket: "tisminSRETool"
+  bucket: "sretool-fullstack"
 ```
 
 ### 3. Run
 
 ```bash
 # Run with config file
-./tisminSRETool -c configs/config.yaml
+./sretool-fullstack -c configs/config.yaml
 
 # Or run with default config
-./tisminSRETool
+./sretool-fullstack
 ```
 
 ### 4. Access Web UI
@@ -91,9 +91,9 @@ sudo tar -C /usr/local -xzf go1.25.6.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 
 # Clone and build
-git clone https://github.com/your-repo/tisminSRETool.git
-cd tisminSRETool
-go build -o tisminSRETool ./cmd/tisminSRETool
+git clone https://github.com/your-repo/sretool-fullstack.git
+cd sretool-fullstack
+go build -o sretool-fullstack ./cmd/sretool-fullstack
 ```
 
 #### 2. Systemd Service
@@ -102,14 +102,14 @@ Create `/etc/systemd/system/tisminsretool.service`:
 
 ```ini
 [Unit]
-Description=tisminSRETool - SRE Monitoring Tool
+Description=sretool-fullstack - SRE Monitoring Tool
 After=network.target
 
 [Service]
 Type=simple
 User=root
-WorkingDirectory=/opt/tisminSRETool
-ExecStart=/opt/tisminSRETool/tisminSRETool -c /opt/tisminSRETool/configs/config.yaml
+WorkingDirectory=/opt/sretool-fullstack
+ExecStart=/opt/sretool-fullstack/sretool-fullstack -c /opt/sretool-fullstack/configs/config.yaml
 Restart=always
 RestartSec=10
 
@@ -119,8 +119,8 @@ WantedBy=multi-user.target
 
 ```bash
 # Install and start
-sudo cp tisminSRETool /opt/tisminSRETool/
-sudo cp -r configs /opt/tisminSRETool/
+sudo cp sretool-fullstack /opt/sretool-fullstack/
+sudo cp -r configs /opt/sretool-fullstack/
 sudo systemctl daemon-reload
 sudo systemctl enable tisminsretool
 sudo systemctl start tisminsretool
@@ -149,16 +149,16 @@ FROM golang:1.25-alpine AS builder
 
 WORKDIR /app
 COPY . .
-RUN go build -o tisminSRETool ./cmd/tisminSRETool
+RUN go build -o sretool-fullstack ./cmd/sretool-fullstack
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /app
-COPY --from=builder /app/tisminSRETool .
+COPY --from=builder /app/sretool-fullstack .
 COPY --from=builder /app/configs ./configs
 
 EXPOSE 8080
-CMD ["./tisminSRETool", "-c", "configs/config.yaml"]
+CMD ["./sretool-fullstack", "-c", "configs/config.yaml"]
 ```
 
 #### 2. Create docker-compose.yml
@@ -190,7 +190,7 @@ services:
   #     - DOCKER_INFLUXDB_INIT_USERNAME=admin
   #     - DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword
   #     - DOCKER_INFLUXDB_INIT_ORG=tismin
-  #     - DOCKER_INFLUXDB_INIT_BUCKET=tisminSRETool
+  #     - DOCKER_INFLUXDB_INIT_BUCKET=sretool-fullstack
   #     - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-admin-token
 
 # volumes:
@@ -242,8 +242,8 @@ server {
 ## Project Structure
 
 ```
-tisminSRETool/
-├── cmd/tisminSRETool/     # Application entry
+sretool-fullstack/
+├── cmd/sretool-fullstack/     # Application entry
 ├── configs/               # Configuration files
 ├── internal/
 │   ├── alert/            # Alert module
@@ -283,7 +283,7 @@ tisminSRETool/
 
 ```bash
 # Application
-APP_NAME=tisminSRETool
+APP_NAME=sretool-fullstack
 APP_LOG_LEVEL=info
 APP_PORT=8080
 
@@ -312,7 +312,7 @@ The built frontend will be served from `/static` path.
 
 ```bash
 # Run backend
-go run ./cmd/tisminSRETool
+go run ./cmd/sretool-fullstack
 
 # Run frontend dev server
 cd web

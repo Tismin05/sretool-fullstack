@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 // Alert 告警信息结构体

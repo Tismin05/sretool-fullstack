@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 	"time"
-	"tisminSRETool/internal/model"
-	"tisminSRETool/pkg/utils"
+	"sretool-fullstack/internal/model"
+	"sretool-fullstack/pkg/utils"
 
 	"golang.org/x/sys/unix"
 )

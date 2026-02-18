@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	"tisminSRETool/internal/alert"
-	"tisminSRETool/internal/collector"
-	"tisminSRETool/internal/engine"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/alert"
+	"sretool-fullstack/internal/collector"
+	"sretool-fullstack/internal/engine"
+	"sretool-fullstack/internal/model"
 )
 
 // Scheduler 调度器

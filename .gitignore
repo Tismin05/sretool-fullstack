@@ -1,5 +1,5 @@
 # Binaries
-tisminSRETool
+sretool-fullstack
 *.exe
 *.exe~
 *.dll

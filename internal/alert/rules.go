@@ -3,7 +3,7 @@ package alert
 import (
 	"context"
 	"fmt"
-	"tisminSRETool/internal/model"
+	"sretool-fullstack/internal/model"
 )
 
 // RuleChecker 告警规则检查器
